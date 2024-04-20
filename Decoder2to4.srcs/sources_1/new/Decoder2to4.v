@@ -1,30 +1,9 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 08.01.2024 13:50:57
-// Design Name: 
-// Module Name: Decoder2to4
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-module Decoder2to4(d0,d1,d2,d3, a0, a1);
-    input a0, a1;
-    output d0,d1,d2,d3;    
-    wire an0,an1;
-                 //Write the logic for 2 to 4 decoder in Gatelevel modeling
-               
+module dec(a,e,d);
+input [1:0]a;
+input e;
+output [3:0]d;
+assign d[0]=~a[1]&~a[0]&e;
+assign d[1]=~a[1]&a[0]&e;
+assign d[2]=a[1]&~a[0]&e;
+assign d[3]=a[1]&~a[0]&e;
 endmodule
-
